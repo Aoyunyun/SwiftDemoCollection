@@ -19,7 +19,29 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    let impact = UIImpactFeedbackGenerator() //1
+    @IBAction func onePressed(_ sender: Any) {
+        impact.impactOccurred(); //2
+    }
+    
+    let selection = UISelectionFeedbackGenerator()
+    @IBAction func twoPressed(_ sender: Any) {
+        selection.selectionChanged()
+    }
+    
+    let notification = UINotificationFeedbackGenerator()
+    @IBAction func successPressed(_ sender: Any) {
+        notification.notificationOccurred(.success)
+    }
+    
+    @IBAction func warningPressed(_ sender: Any) {
+         notification.notificationOccurred(.warning)
+    }
+    
+    @IBAction func errorPressed(_ sender: Any) {
+         notification.notificationOccurred(.error)
+    }
+    
 }
 
