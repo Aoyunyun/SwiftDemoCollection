@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nb4-74-J3y">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FaceDetector-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaceDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56G-m5-cDV">
+                                <rect key="frame" x="152" y="318" width="70" height="30"/>
+                                <state key="normal" title="takePhoto"/>
+                                <connections>
+                                    <segue destination="FoP-cv-cpL" kind="show" id="38F-WW-D9o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="56G-m5-cDV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3qR-Hx-p1t"/>
+                            <constraint firstItem="56G-m5-cDV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qg5-SI-8Ab"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FaceDetector" id="cLZ-hs-3i3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="-645"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="qPY-1L-Ci0">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9s-hC-r9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="FoP-cv-cpL" customClass="PhotoViewController" customModule="FaceDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JDn-GK-fdb"/>
+                        <viewControllerLayoutGuide type="bottom" id="JSO-JT-vvB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IaK-nu-TGU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cGC-AA-ax0">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cGC-AA-ax0" firstAttribute="top" secondItem="JDn-GK-fdb" secondAttribute="bottom" id="CRf-co-blA"/>
+                            <constraint firstItem="cGC-AA-ax0" firstAttribute="bottom" secondItem="JSO-JT-vvB" secondAttribute="top" id="DzR-bv-COZ"/>
+                            <constraint firstItem="cGC-AA-ax0" firstAttribute="leading" secondItem="IaK-nu-TGU" secondAttribute="leading" id="gTm-ri-c7g"/>
+                            <constraint firstAttribute="trailing" secondItem="cGC-AA-ax0" secondAttribute="trailing" id="zWM-RQ-FYf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1lZ-C2-fCF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ura-RB-kXI">
+                            <connections>
+                                <action selector="startFaceDetector:" destination="FoP-cv-cpL" id="WOa-yM-LPl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="cGC-AA-ax0" id="1SG-9Z-JPc"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2054" y="-645"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ezR-92-XhA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nb4-74-J3y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mfy-Rs-6To">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fFb-b6-ZFE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJ5-AI-4kk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256.80000000000001" y="-645.42728635682158"/>
+        </scene>
+    </scenes>
+</document>
